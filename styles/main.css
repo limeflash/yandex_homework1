@@ -1,0 +1,18 @@
+* {
+  padding: 0;
+  margin: 0;
+}
+
+#app {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  background: green;
+  height: 100vh;
+}
+
+.header {
+  background: yellow;
+  height: 100px;
+}
+/*# sourceMappingURL=main.css.map */
