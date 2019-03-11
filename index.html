@@ -23,6 +23,12 @@
 
     <!-- Яндекс.Браузер -->
     <meta name="viewport" content="ya-title=#4e69a2,ya-dock=fade" />
+
+    <!-- Styles -->
+    <link
+      href="https://use.fontawesome.com/releases/v5.0.13/css/all.css"
+      rel="stylesheet"
+    />
     <link
       rel="stylesheet"
       type="text/css"
@@ -37,7 +43,12 @@
         <div class="logo">
          <a href="/"><img src="assets/yandex_logo.svg" alt="yandex_logo"></a>
         </div>
-        <nav class="navigation"></nav>
+        <nav class="navigation">
+          <form class="search-form">
+            <input class="search-form__input" type="text" placeholder="Search.." name="search">
+            <button type="submit"><i class="fa fa-search"></i></button>
+          </form>
+        </nav>
       </header>
       <article class="main-content"></article>
       <footer class="footer"></footer>
