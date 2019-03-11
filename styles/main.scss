@@ -5,30 +5,41 @@
 .wrapper {
   display: flex;
   flex-flow: column;
-  background: #FF0000;
+  background: #ff0000;
   height: 100vh;
   order: 0;
 }
 .header {
   display: flex;
-  background: #ffdb4d; // => testing color
+  flex-direction: column;
+  background: #ffffff; // => testing color
   order: 1;
   flex: 1 20%;
   > div {
+    // div element styles {div of logo}
     margin: auto;
+    margin-top: 1%;
+    order: 1;
+    flex: 1 60%;
   }
-  > div > img {
+  > div > a > img {
+    // logo styles
     width: 16em;
-    height: auto;
-    top: 50px;
   }
   > div::after {
-    content: ".COURSES";
+    // pseudo elemen fot logo
+    content: ".SCHEDULE";
     font-family: Arial, Helvetica, sans-serif;
     font-weight: bolder;
     font-size: 1.2em;
     color: #000000;
   }
+}
+.navigation {
+  background: gold;
+  order: 2;
+  flex: 1 40%;
+  // flex: 0 30%; // flex size of nav element
 }
 .main-content {
   background: #6daae8; // => testing color
