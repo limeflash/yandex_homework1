@@ -2,12 +2,41 @@
   padding: 0;
   margin: 0;
 }
-#app {
+.wrapper {
   display: flex;
-  background: green;
+  flex-flow: column;
+  background: #FF0000;
   height: 100vh;
+  order: 0;
 }
 .header {
-  background: yellow;
-  height: 100px;
+  display: flex;
+  background: #ffdb4d; // => testing color
+  order: 1;
+  flex: 1 20%;
+  > div {
+    margin: auto;
+  }
+  > div > img {
+    width: 16em;
+    height: auto;
+    top: 50px;
+  }
+  > div::after {
+    content: ".COURSES";
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: bolder;
+    font-size: 1.2em;
+    color: #000000;
+  }
+}
+.main-content {
+  background: #6daae8; // => testing color
+  order: 2;
+  flex: 1 60%;
+}
+.footer {
+  background: #000000; // => testing color
+  order: 3;
+  flex: 1 10%;
 }
