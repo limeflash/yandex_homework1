@@ -3,6 +3,10 @@ let jsonframe = require("jsonframe-cheerio");
 const got = require("got");
 var fs = require('fs');
 
+app.get('/', function (req, res) {
+  res.send(index.html)
+})
+
 async function scrapScheme() {
   const url = "https://dustyo-o.github.io/calendar";
   const html = await got(url);
@@ -33,9 +37,9 @@ async function scrapScheme() {
 	}
   };
   var dataDB = ($('body').scrape(frame, {
-}))
+}))	
 var jsonSync = function () {
-	fs.writeFileSync('./data.json', JSON.stringify(dataDB, null, 2));
+	fs.writeFileSync('./data.json', JSON.stringify(dataDB, null, 3));
 }
 jsonSync();
 }

@@ -79,18 +79,16 @@
     color: white;
     @include font2;
   }
-  >.search-form__button::after {
-    content: "";
-    position: absolute;
-    border: 10px solid transparent;
-    border-left: 29px solid #000;
-  }
 }
 
 .main-content {
-  background: #6daae8; // => testing color
+  display: flex;
+  background: white; // => testing color
   order: 2;
   flex: 1 60%;
+  > .wrapper2 {
+    background: #000;
+  }
 }
 .footer {
   background: #000;
