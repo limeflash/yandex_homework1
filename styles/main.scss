@@ -1,7 +1,22 @@
+@mixin font1 {
+  font: {
+    family: Arial, Helvetica, sans-serif;
+    weight: bolder;
+    size: 1.2em;
+  }
+}
+@mixin font2 {
+  font: {
+    family: Arial, Helvetica, sans-serif;
+    weight: bold;
+    size: 1em;
+  }
+}
 * {
   padding: 0;
   margin: 0;
 }
+//=> Wrapper styles:
 .wrapper {
   display: flex;
   flex-flow: column;
@@ -9,13 +24,14 @@
   height: 100vh;
   order: 0;
 }
+//=> Header styles:
 .header {
   display: flex;
   flex-direction: column;
   background: #ffffff; // => testing color
   order: 1;
   flex: 1 20%;
-  user-select: none; 
+  user-select: none;
   > div {
     // div element styles {div of logo}
     order: 1;
@@ -31,26 +47,59 @@
   > div::after {
     // pseudo elemen fot logo
     content: ".SCHEDULE";
-    font: {
-      family: Arial, Helvetica, sans-serif;
-      weight: bolder;
-      size: 1.2em;
-    }
+    @include font1;
     color: #000000;
   }
   > div + nav {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
     background: gold;
     order: 2;
     flex: 1 30%;
   }
 }
+.search-form {
+  justify-self: center;
+  align-self: center;
+  > .search-form__input {
+    background: white;
+    border: none;
+    width: 40vw;
+    height: 4vh;
+    padding: 0 0 0 6px;
+    @include font2;
+  }
+  > .search-form__button {
+    background: #000;
+    border: none;
+    height: 4vh;
+    padding: 0 10px 0 10px;
+    color: white;
+    @include font2;
+  }
+  >.search-form__button::after {
+    content: "";
+    position: absolute;
+    border: 10px solid transparent;
+    border-left: 29px solid #000;
+  }
+}
+
 .main-content {
   background: #6daae8; // => testing color
   order: 2;
   flex: 1 60%;
 }
 .footer {
-  background: #000000; // => testing color
+  background: #000;
+  display: flex; // => testing color
   order: 3;
   flex: 1 10%;
+  > .copy {
+    color: white;
+    margin: auto;
+    @include font2;
+  }
 }

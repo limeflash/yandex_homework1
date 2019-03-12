@@ -1,0 +1,17 @@
+{
+  "name": "yandex_node",
+  "version": "1.0.0",
+  "description": "Homework yandex 1st",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "LimeFlash",
+  "license": "MIT",
+  "dependencies": {
+    "cheerio": "^1.0.0-rc.2",
+    "got": "^9.6.0",
+    "jsonframe": "0.0.2",
+    "jsonframe-cheerio": "^3.0.1"
+  }
+}
