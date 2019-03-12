@@ -32,8 +32,6 @@ async function scrapScheme() {
 	}
   };
   var dataDB = ($('body').scrape(frame, {
-		normalizeWhitespace: true,
-    xmlMode: true
 }))	
 var jsonSync = function () {
 	fs.writeFileSync('./data.json', JSON.stringify(dataDB, null, 3));
