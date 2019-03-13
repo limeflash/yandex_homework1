@@ -1,7 +1,7 @@
 let cheerio = require("cheerio");
 let jsonframe = require("jsonframe-cheerio");
 const got = require("got");
-var fs = require('fs');
+var fs = require("fs");
 
 async function scrapScheme() {
   const url = "https://dustyo-o.github.io/calendar";
@@ -9,33 +9,42 @@ async function scrapScheme() {
   const $ = cheerio.load(html.body);
   jsonframe($);
   let frame = {
-    title: {
-	  _s: ".wiki-head",
+    title_h2: {
+      _s: ".wiki-head",
       _d: [
         {
-		  "name": "h2 > span",
-		  "topic": "h3 > span",
+          name: "h2 > span"
         }
       ]
-	},
-	list: {
-		_s: ".wiki-list",
-		_d: [{
-			"list": "_parent_"
-		}]
-	},
-	date: {
-		_s:".wiki-p",
-		_d: [{
-			"date": "_parent_"
-		}]
-	}
+		},
+		title_h3: {
+      _s: ".wiki-head",
+      _d: [{
+          topic: "h3 > span"
+        }]
+    },
+    list: {
+      _s: ".wiki-list",
+      _d: [
+        {
+          list: "_parent_ < number"
+        }
+      ]
+    },
+    date: {
+      _s: ".wiki-p",
+      _d: [
+        {
+          date: "_parent_"
+        }
+      ]
+    }
   };
-  var dataDB = ($('body').scrape(frame, {
-}))	
-var jsonSync = function () {
-	fs.writeFileSync('./data.json', JSON.stringify(dataDB, null, 3));
-}
-jsonSync();
+  var dataDB = $("body").scrape(frame, {
+	});
+  var jsonSync = function() {
+    fs.writeFileSync("./data.json", JSON.stringify(dataDB, null, 4));
+  };
+  jsonSync();
 }
 scrapScheme();
