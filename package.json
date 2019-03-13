@@ -10,6 +10,7 @@
   "license": "MIT",
   "dependencies": {
     "cheerio": "^1.0.0-rc.2",
+    "express": "^4.16.4",
     "got": "^9.6.0",
     "jsonframe": "0.0.2",
     "jsonframe-cheerio": "^3.0.1"
